@@ -25,7 +25,7 @@ Everything is stored as a single JSON blob on the **user's own device**. No serv
 
 ---
 
-## [Visit Ubuzz](https://ubuzz.netlify.app/)
+## Visit[ Ubuzz](https://ubuzz.netlify.app/)
 
 ## Features
 
