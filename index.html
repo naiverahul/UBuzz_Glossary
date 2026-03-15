@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>UBuzz — Business Vocabulary, Mastered</title>
+<meta name="description" content="Learn 200+ essential business terms. No login — your progress saves automatically in your browser."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0b0d12;--surface:#13161d;--card:#1a1e27;--card-h:#1f232e;
+  --border:rgba(255,255,255,0.07);--borderL:rgba(255,255,255,0.14);
+  --accent:#e8c04a;--adim:rgba(232,192,74,0.13);--aglow:rgba(232,192,74,0.28);
+  --text:#edeae4;--muted:#7a8090;--dim:#3e4452;
+  --green:#4dd0a8;--red:#ef5350;--blue:#5b9cf6;
+  --r:12px;--rs:8px;--rl:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.033'/%3E%3C/svg%3E");pointer-events:none;z-index:0;}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid var(--border);background:rgba(11,13,18,0.88);backdrop-filter:blur(18px);}
+.logo{font-family:'Cormorant Garant',serif;font-size:24px;font-weight:600;color:var(--text);cursor:pointer;letter-spacing:-.5px;}
+.logo span{color:var(--accent);}
+.navlinks{display:flex;gap:2px;}
+.nl{padding:6px 13px;border-radius:var(--rs);font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;border:none;background:transparent;font-family:'Sora',sans-serif;}
+.nl:hover{color:var(--text);background:rgba(255,255,255,0.05);}
+.nl.active{color:var(--accent);background:var(--adim);}
+.nav-r{display:flex;align-items:center;gap:8px;}
+.streak{display:flex;align-items:center;gap:5px;padding:5px 11px;border-radius:20px;background:rgba(232,192,74,0.09);border:1px solid rgba(232,192,74,0.2);font-size:12px;font-weight:600;color:var(--accent);}
+.saved-pill{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:var(--muted);padding:4px 10px;border-radius:20px;border:1px solid var(--border);}
+.saved-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pdot 2.5s ease infinite;}
+@keyframes pdot{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* PAGES */
+.page{display:none;padding-top:58px;min-height:100vh;position:relative;z-index:1;}
+.page.active{display:block;}
+
+/* HERO */
+.hero{position:relative;padding:72px 28px 52px;overflow:hidden;}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 65% at 50% 0%,black,transparent);pointer-events:none;}
+.hcontent{position:relative;max-width:700px;}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+.eyebrow::before{content:'';display:block;width:22px;height:1px;background:var(--accent);}
+.hero h1{font-family:'Cormorant Garant',serif;font-size:clamp(40px,6.5vw,68px);font-weight:600;line-height:1.08;letter-spacing:-1.2px;color:var(--text);margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:16px;color:var(--muted);max-width:480px;line-height:1.75;margin-bottom:32px;}
+.hbtns{display:flex;gap:11px;flex-wrap:wrap;}
+.bp{padding:11px 26px;background:var(--accent);color:#0b0d12;border:none;border-radius:var(--rs);font-family:'Sora',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;}
+.bp:hover{background:#f0ce6a;transform:translateY(-1px);box-shadow:0 8px 28px var(--aglow);}
+.bs{padding:11px 22px;background:transparent;color:var(--text);border:1px solid var(--borderL);border-radius:var(--rs);font-family:'Sora',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;}
+.bs:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.22);}
+
+/* SAVE BANNER */
+.sbanner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:0 28px;padding:12px 18px;background:rgba(77,208,168,0.06);border:1px solid rgba(77,208,168,0.18);border-radius:var(--r);font-size:13px;color:var(--muted);}
+.sbanner strong{color:var(--green);font-weight:600;}
+.sba{display:flex;gap:7px;}
+.xbtn{padding:5px 13px;border-radius:20px;border:1px solid var(--borderL);background:transparent;font-family:'Sora',sans-serif;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .14s;}
+.xbtn:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
+.xbtn.dng:hover{color:var(--red);border-color:var(--red);}
+
+/* STATS STRIP */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-top:22px;}
+.sitem{background:var(--surface);padding:22px 24px;position:relative;overflow:hidden;}
+.sitem::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:.35s;}
+.sitem:hover::after{transform:scaleX(1);}
+.snum{font-family:'Cormorant Garant',serif;font-size:38px;font-weight:600;color:var(--text);line-height:1;}
+.slbl{font-size:11px;color:var(--muted);margin-top:5px;font-weight:500;}
+
+/* SECTION */
+.sec{padding:44px 28px;}
+.sechd{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;}
+.sectl{font-family:'Cormorant Garant',serif;font-size:26px;font-weight:600;color:var(--text);}
+.secsub{font-size:13px;color:var(--muted);}
+
+/* CATEGORY CARDS */
+.catgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;}
+.catcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.catcard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cc);}
+.catcard:hover{background:var(--card-h);border-color:var(--borderL);transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,0.35);}
+.cicon{font-size:22px;margin-bottom:9px;display:block;}
+.cname{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.cmeta{font-size:12px;color:var(--muted);}
+.cbarw{margin-top:11px;background:rgba(255,255,255,0.05);border-radius:3px;height:3px;overflow:hidden;}
+.cbar{height:100%;border-radius:3px;transition:width .6s ease;}
+
+/* HISTORY ROW */
+.hrow{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.hrow:last-child{border-bottom:none;}
+.hscore{font-family:'Cormorant Garant',serif;font-size:22px;font-weight:600;min-width:46px;}
+.hmeta{flex:1;color:var(--muted);}
+.hdate{font-size:11px;color:var(--dim);}
+.hpips{display:flex;gap:3px;}
+.hpip{width:13px;height:5px;border-radius:2px;}
+
+/* FLASHCARD LAYOUT */
+.fclayout{display:grid;grid-template-columns:248px 1fr;min-height:calc(100vh - 58px);}
+.fcsidebar{background:var(--surface);border-right:1px solid var(--border);padding:22px 14px;position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;}
+.sblbl{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim);margin-bottom:11px;padding:0 5px;}
+.scitem{padding:7px 10px;border-radius:var(--rs);font-size:13px;cursor:pointer;color:var(--muted);transition:all .13s;display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:1px;}
+.scitem:hover{background:rgba(255,255,255,0.04);color:var(--text);}
+.scitem.active{background:var(--adim);color:var(--accent);}
+.scdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.scct{font-size:11px;color:var(--dim);}
+.fcmain{padding:34px 42px;display:flex;flex-direction:column;align-items:center;}
+.fcpbw{width:100%;max-width:560px;height:3px;background:var(--card);border-radius:2px;margin-bottom:26px;overflow:hidden;}
+.fcpb{height:100%;background:var(--accent);border-radius:2px;transition:width .4s ease;}
+.cscene{width:100%;max-width:560px;height:286px;perspective:1200px;cursor:pointer;margin-bottom:22px;user-select:none;}
+.c3d{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .52s cubic-bezier(.4,0,.2,1);}
+.c3d.flipped{transform:rotateY(180deg);}
+.cface{position:absolute;inset:0;backface-visibility:hidden;border-radius:var(--rl);border:1px solid var(--borderL);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 36px;text-align:center;}
+.cfront{background:var(--card);}
+.cback{background:var(--surface);transform:rotateY(180deg);}
+.cbadge{display:inline-flex;align-items:center;padding:4px 11px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.4px;margin-bottom:16px;}
+.cterm{font-family:'Cormorant Garant',serif;font-size:36px;font-weight:600;color:var(--text);line-height:1.15;letter-spacing:-.4px;}
+.chint{font-size:11px;color:var(--dim);margin-top:12px;}
+.cdef{font-size:14px;color:var(--text);line-height:1.75;font-weight:300;}
+.ccontrols{display:flex;align-items:center;gap:11px;width:100%;max-width:560px;}
+.ccbtn{width:42px;height:42px;border-radius:50%;border:1px solid var(--borderL);background:transparent;color:var(--text);font-size:17px;cursor:pointer;transition:all .17s;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ccbtn:hover:not(:disabled){background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.2);}
+.ccbtn:disabled{opacity:.22;cursor:default;}
+.cccenter{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.ccind{font-size:13px;color:var(--muted);}
+.ccm{padding:7px 17px;border-radius:var(--rs);border:1px solid var(--borderL);background:transparent;color:var(--muted);font-family:'Sora',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all .17s;}
+.ccm:hover{border-color:var(--accent);color:var(--accent);}
+.ccm.on{background:var(--adim);border-color:var(--accent);color:var(--accent);}
+.shortcuts{margin-top:18px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.sc{font-size:11px;color:var(--dim);display:flex;align-items:center;gap:5px;}
+.key{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:18px;padding:0 5px;border-radius:3px;border:1px solid var(--dim);font-size:10px;font-weight:600;color:var(--dim);}
+
+/* QUIZ */
+.qwrap{max-width:620px;margin:0 auto;padding:44px 24px;}
+.qstart{text-align:center;padding:56px 20px;}
+.qstart h2{font-family:'Cormorant Garant',serif;font-size:40px;font-weight:600;color:var(--text);margin-bottom:10px;}
+.qstart p{font-size:15px;color:var(--muted);margin-bottom:30px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.qcatgrid{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:28px;}
+.qcbtn{padding:6px 15px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'Sora',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all .14s;}
+.qcbtn.active{background:var(--adim);border-color:rgba(232,192,74,.35);color:var(--accent);}
+.qcbtn:hover:not(.active){border-color:var(--borderL);color:var(--text);}
+.qtopbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;}
+.qpips{display:flex;gap:4px;}
+.qpip{width:26px;height:4px;border-radius:2px;background:var(--card);transition:background .22s;}
+.qpip.c{background:var(--green);}
+.qpip.w{background:var(--red);}
+.qpip.cur{background:var(--accent);}
+.qsc{font-size:13px;color:var(--muted);}
+.qqwrap{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:30px 30px 22px;margin-bottom:12px;}
+.qctag{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;margin-bottom:11px;}
+.qq{font-family:'Cormorant Garant',serif;font-size:26px;font-weight:600;line-height:1.3;color:var(--text);}
+.qopts{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.qopt{padding:13px 17px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);font-size:14px;color:var(--text);cursor:pointer;transition:all .13s;text-align:left;line-height:1.55;font-family:'Sora',sans-serif;}
+.qopt:hover:not(:disabled){border-color:var(--borderL);background:var(--card-h);}
+.qopt:disabled{cursor:default;}
+.qopt.correct{background:rgba(77,208,168,0.1);border-color:var(--green);color:var(--green);}
+.qopt.wrong{background:rgba(239,83,80,0.09);border-color:var(--red);color:var(--red);}
+.qfb{padding:11px 15px;border-radius:var(--rs);font-size:13px;margin-bottom:13px;display:none;}
+.qfb.show{display:block;}
+.qfb.ok{background:rgba(77,208,168,0.08);border:1px solid rgba(77,208,168,0.22);color:var(--green);}
+.qfb.bad{background:rgba(239,83,80,0.07);border:1px solid rgba(239,83,80,0.18);color:var(--red);}
+.qnext{width:100%;padding:12px;background:var(--accent);color:#0b0d12;border:none;border-radius:var(--rs);font-family:'Sora',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .17s;display:none;}
+.qnext.show{display:block;}
+.qnext:hover{background:#f0ce6a;}
+/* result */
+.rscreen{text-align:center;padding:52px 20px;}
+.rring{width:148px;height:148px;margin:0 auto 22px;position:relative;}
+.rring svg{transform:rotate(-90deg);}
+.rlabel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.rpct{font-family:'Cormorant Garant',serif;font-size:40px;font-weight:600;color:var(--text);}
+.rfrac{font-size:12px;color:var(--muted);}
+.rtitle{font-family:'Cormorant Garant',serif;font-size:30px;font-weight:600;color:var(--text);margin-bottom:7px;}
+.rsub{font-size:14px;color:var(--muted);margin-bottom:26px;max-width:360px;margin-left:auto;margin-right:auto;}
+.rbtns{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;}
+
+/* GLOSSARY */
+.gwrap{max-width:880px;margin:0 auto;padding:44px 28px;}
+.gsw{position:relative;margin-bottom:18px;}
+.gsicon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px;pointer-events:none;}
+.gs{width:100%;padding:12px 15px 12px 44px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:'Sora',sans-serif;font-size:14px;outline:none;transition:border-color .18s;}
+.gs:focus{border-color:var(--borderL);}
+.gs::placeholder{color:var(--dim);}
+.gfilters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px;}
+.gfbtn{padding:5px 13px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-family:'Sora',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all .13s;}
+.gfbtn:hover{border-color:var(--borderL);color:var(--text);}
+.gfbtn.active{background:var(--adim);border-color:rgba(232,192,74,.35);color:var(--accent);}
+.gtable{}
+.grow{display:grid;grid-template-columns:185px 1fr 26px;gap:16px;align-items:start;padding:15px 0;border-bottom:1px solid var(--border);}
+.grow:last-child{border-bottom:none;}
+.gterm{font-size:14px;font-weight:600;color:var(--text);line-height:1.4;}
+.gchip{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px;margin-top:5px;}
+.gdef{font-size:13px;color:var(--muted);line-height:1.7;}
+.gdot{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--dim);cursor:pointer;transition:all .14s;margin-top:3px;}
+.gdot.on{background:var(--accent);border-color:var(--accent);}
+.gempty{text-align:center;padding:52px;color:var(--muted);font-size:14px;}
+
+/* PROGRESS */
+.pwrap{max-width:760px;margin:0 auto;padding:44px 28px;}
+.psect{margin-bottom:38px;}
+.psectitle{font-family:'Cormorant Garant',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:16px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.pcrow{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--border);}
+.pcrow:last-child{border-bottom:none;}
+.pcicon{font-size:18px;width:26px;text-align:center;flex-shrink:0;}
+.pcname{font-size:13px;font-weight:600;color:var(--text);min-width:108px;}
+.pcbarw{flex:1;height:6px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;}
+.pcbar{height:100%;border-radius:3px;transition:width .6s ease;}
+.pcfrac{font-size:12px;color:var(--muted);min-width:48px;text-align:right;}
+.storecard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-top:6px;}
+.strow{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.strow:last-child{border-bottom:none;}
+.stlbl{color:var(--muted);}
+.stval{font-weight:500;color:var(--text);}
+.stval.g{color:var(--green);}
+.actrow{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap;}
+.actbtn{padding:8px 18px;border-radius:var(--rs);border:1px solid var(--borderL);background:transparent;font-family:'Sora',sans-serif;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;transition:all .14s;}
+.actbtn:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.2);}
+.actbtn.dng{color:var(--red);}
+.actbtn.dng:hover{border-color:var(--red);background:rgba(239,83,80,0.07);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.au{animation:fadeUp .44s ease both;}
+.d1{animation-delay:.08s;}.d2{animation-delay:.16s;}.d3{animation-delay:.25s;}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(68px);background:var(--surface);border:1px solid var(--borderL);color:var(--text);padding:10px 19px;border-radius:var(--rs);font-size:13px;font-weight:500;z-index:999;transition:transform .28s cubic-bezier(.4,0,.2,1);pointer-events:none;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.5);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* MODAL */
+.mbg{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:200;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.mbg.hidden{display:none;}
+.mbox{background:var(--surface);border:1px solid var(--borderL);border-radius:var(--rl);padding:26px 26px 22px;max-width:420px;width:calc(100% - 36px);}
+.mbox h3{font-family:'Cormorant Garant',serif;font-size:22px;font-weight:600;color:var(--text);margin-bottom:9px;}
+.mbox p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+.macts{display:flex;gap:8px;justify-content:flex-end;}
+.mbox textarea{width:100%;height:86px;background:var(--card);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-family:'Sora',sans-serif;font-size:12px;padding:9px;resize:none;outline:none;margin-bottom:14px;}
+
+/* RESPONSIVE */
+@media(max-width:720px){
+  .fclayout{grid-template-columns:1fr;}
+  .fcsidebar{display:none;}
+  .fcmain{padding:22px 16px;}
+  .strip{grid-template-columns:repeat(2,1fr);}
+  .hero{padding:54px 16px 38px;}
+  .grow{grid-template-columns:1fr;gap:5px;}
+  .qwrap{padding:30px 14px;}
+  .sec{padding:30px 16px;}
+  .cscene{height:238px;}
+  .cterm{font-size:29px;}
+  #nav{padding:0 13px;}
+  .nl{padding:5px 8px;font-size:12px;}
+  .saved-pill{display:none;}
+}
+@media(max-width:420px){.strip{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <span class="logo" onclick="nav('dashboard')"><span>U</span>Buzz</span>
+  <div class="navlinks">
+    <button class="nl active" data-page="dashboard">Home</button>
+    <button class="nl" data-page="flashcard">Cards</button>
+    <button class="nl" data-page="quiz">Quiz</button>
+    <button class="nl" data-page="glossary">Glossary</button>
+    <button class="nl" data-page="progress">Progress</button>
+  </div>
+  <div class="nav-r">
+    <div class="saved-pill" title="Zero login — progress saves in your browser automatically">
+      <span class="saved-dot"></span>Auto-saved
+    </div>
+    <div class="streak" id="streak-badge">🔥 <span id="snum">0</span>&nbsp;day</div>
+  </div>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<div class="mbg hidden" id="mbg">
+  <div class="mbox" id="mbox"></div>
+</div>
+
+<!-- ══ DASHBOARD ══ -->
+<div class="page active" id="page-dashboard">
+  <div class="hero">
+    <div class="hgrid"></div>
+    <div class="hcontent">
+      <div class="eyebrow au">Zero Login · Just Learn</div>
+      <h1 class="au d1">Know your business.<br><em>Own every room.</em></h1>
+      <p class="hero-sub au d2">200+ essential business terms across 8 categories. Flashcards, quizzes, glossary. No account. No ads. Progress lives right here in your browser.</p>
+      <div class="hbtns au d3">
+        <button class="bp" onclick="nav('flashcard')">Start Flashcards →</button>
+        <button class="bs" onclick="nav('quiz')">Take a Quiz</button>
+      </div>
+    </div>
+  </div>
+  <div class="sbanner">
+    <span>🔒 <strong>Progress saves automatically</strong> — no login, no account, works offline.</span>
+    <div class="sba">
+      <button class="xbtn" onclick="exportProgress()">Export backup</button>
+      <button class="xbtn dng" onclick="confirmReset()">Reset all</button>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="sitem au d1"><div class="snum" id="d-total">65</div><div class="slbl">Total terms</div></div>
+    <div class="sitem au d2"><div class="snum" id="d-mastered">0</div><div class="slbl">Mastered</div></div>
+    <div class="sitem au d3"><div class="snum" id="d-pct">0%</div><div class="slbl">Complete</div></div>
+    <div class="sitem au d3"><div class="snum" id="d-quizzes">0</div><div class="slbl">Quizzes taken</div></div>
+  </div>
+  <div class="sec">
+    <div class="sechd"><div class="sectl">Categories</div><div class="secsub" id="d-catsub"></div></div>
+    <div class="catgrid" id="catgrid"></div>
+  </div>
+  <div class="sec" style="padding-top:0;" id="histsec">
+    <div class="sechd"><div class="sectl">Recent Quizzes</div><div class="secsub" id="histsub"></div></div>
+    <div id="histlist"></div>
+  </div>
+</div>
+
+<!-- ══ FLASHCARDS ══ -->
+<div class="page" id="page-flashcard">
+  <div class="fclayout">
+    <div class="fcsidebar">
+      <div class="sblbl">Categories</div>
+      <div id="fcsb"></div>
+    </div>
+    <div class="fcmain">
+      <div class="fcpbw"><div class="fcpb" id="fcpb"></div></div>
+      <div class="cscene" id="cscene" onclick="flipCard()">
+        <div class="c3d" id="c3d">
+          <div class="cface cfront">
+            <div class="cbadge" id="cbadge"></div>
+            <div class="cterm" id="cterm">—</div>
+            <div class="chint">tap to reveal &nbsp;·&nbsp; space bar</div>
+          </div>
+          <div class="cface cback">
+            <div class="cbadge" id="cbadge2"></div>
+            <div class="cdef" id="cdef">—</div>
+          </div>
+        </div>
+      </div>
+      <div class="ccontrols">
+        <button class="ccbtn" id="fcprev" onclick="fcPrev()">←</button>
+        <div class="cccenter">
+          <div class="ccind" id="ccind">1 / 65</div>
+          <button class="ccm" id="ccm" onclick="toggleMastered()">Mark mastered</button>
+        </div>
+        <button class="ccbtn" onclick="fcShuffle()" title="Shuffle">⇄</button>
+        <button class="ccbtn" id="fcnext" onclick="fcNext()">→</button>
+      </div>
+      <div class="shortcuts">
+        <span class="sc"><span class="key">←</span><span class="key">→</span> navigate</span>
+        <span class="sc"><span class="key">Space</span> flip</span>
+        <span class="sc"><span class="key">M</span> master</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div class="page" id="page-quiz">
+  <div class="qwrap">
+    <div id="qstart">
+      <div class="qstart">
+        <h2>Test Your Knowledge</h2>
+        <p>10 multiple-choice questions from your chosen category. All results save automatically to your browser.</p>
+        <div class="sblbl" style="margin-bottom:10px;text-align:left;">Choose category</div>
+        <div class="qcatgrid" id="qcatpicker"></div>
+        <button class="bp" onclick="startQuiz()" style="min-width:170px;">Begin Quiz →</button>
+      </div>
+    </div>
+    <div id="qactive" style="display:none;">
+      <div class="qtopbar">
+        <div class="qpips" id="qpips"></div>
+        <div class="qsc" id="qsclive">Score: 0</div>
+      </div>
+      <div class="qqwrap">
+        <div class="qctag" id="qctag"></div>
+        <div class="qq" id="qtext"></div>
+      </div>
+      <div class="qopts" id="qopts"></div>
+      <div class="qfb" id="qfb"></div>
+      <button class="qnext" id="qnext" onclick="quizNext()">Next →</button>
+    </div>
+    <div id="qresult" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ══ GLOSSARY ══ -->
+<div class="page" id="page-glossary">
+  <div class="gwrap">
+    <div class="gsw">
+      <span class="gsicon">⌕</span>
+      <input class="gs" id="gsearch" type="text" placeholder="Search any term or definition…" oninput="renderGloss()"/>
+    </div>
+    <div class="gfilters" id="gfilters"></div>
+    <div class="gtable" id="gtable"></div>
+  </div>
+</div>
+
+<!-- ══ PROGRESS ══ -->
+<div class="page" id="page-progress">
+  <div class="pwrap">
+    <div class="sechd" style="margin-bottom:22px;">
+      <div class="sectl" style="font-size:30px;">Your Progress</div>
+      <div class="secsub">Stored in your browser · zero login</div>
+    </div>
+    <div class="psect">
+      <div class="psectitle">Mastery by Category</div>
+      <div id="pcats"></div>
+    </div>
+    <div class="psect">
+      <div class="psectitle">Quiz History</div>
+      <div id="phist"></div>
+    </div>
+    <div class="psect">
+      <div class="psectitle">Storage &amp; Data</div>
+      <div class="storecard" id="storecard"></div>
+      <div class="actrow">
+        <button class="actbtn" onclick="exportProgress()">📤 Export JSON backup</button>
+        <button class="actbtn" onclick="importPrompt()">📥 Import backup</button>
+        <button class="actbtn dng" onclick="confirmReset()">🗑 Reset all progress</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+// ════════════════════════════════════════
+//  DATA
+// ════════════════════════════════════════
+const CATS={
+  "Finance":      {color:"#e8c04a",bg:"rgba(232,192,74,0.12)", icon:"💰"},
+  "Marketing":    {color:"#f06292",bg:"rgba(240,98,146,0.12)",icon:"📣"},
+  "Strategy":     {color:"#5b9cf6",bg:"rgba(91,156,246,0.12)", icon:"♟"},
+  "Operations":   {color:"#4dd0a8",bg:"rgba(77,208,168,0.12)",icon:"⚙️"},
+  "HR & Mgmt":    {color:"#a78bfa",bg:"rgba(167,139,250,0.12)",icon:"🧑‍💼"},
+  "Startup":      {color:"#fb8c5a",bg:"rgba(251,140,90,0.12)", icon:"🚀"},
+  "Accounting":   {color:"#66bb6a",bg:"rgba(102,187,106,0.12)",icon:"📒"},
+  "Business Law": {color:"#ef5350",bg:"rgba(239,83,80,0.12)",  icon:"⚖️"},
+};
+const TERMS=[
+  {t:"Revenue",d:"Total income from sales before any expenses — the 'top line'.",c:"Finance"},
+  {t:"Net Profit",d:"Earnings after all expenses, taxes, and costs — the 'bottom line'.",c:"Finance"},
+  {t:"Gross Margin",d:"Percentage of revenue left after subtracting cost of goods sold (COGS).",c:"Finance"},
+  {t:"EBITDA",d:"Earnings Before Interest, Taxes, Depreciation & Amortization — measures core operational profit.",c:"Finance"},
+  {t:"Cash Flow",d:"Net movement of cash in and out of a business. Positive = more in than out.",c:"Finance"},
+  {t:"Balance Sheet",d:"Snapshot of a company's assets, liabilities, and shareholders' equity at a specific date.",c:"Finance"},
+  {t:"P&L Statement",d:"Profit & Loss Statement — summarises revenues, costs, and expenses over a period.",c:"Finance"},
+  {t:"ROI",d:"Return on Investment — percentage gain or loss relative to the cost of the investment.",c:"Finance"},
+  {t:"Working Capital",d:"Current assets minus current liabilities — measures short-term financial health.",c:"Finance"},
+  {t:"Equity",d:"Ownership value in a company — total assets minus total liabilities.",c:"Finance"},
+  {t:"Liquidity",d:"How easily an asset can be converted into cash without affecting its price significantly.",c:"Finance"},
+  {t:"Leverage",d:"Using borrowed capital to amplify potential returns — increases both gains and losses.",c:"Finance"},
+  {t:"Market Segmentation",d:"Dividing a broad market into smaller groups with shared characteristics or needs.",c:"Marketing"},
+  {t:"Brand Equity",d:"Commercial value from consumer perception of a brand name, beyond the product itself.",c:"Marketing"},
+  {t:"CAC",d:"Customer Acquisition Cost — total marketing/sales spend needed to win one new customer.",c:"Marketing"},
+  {t:"LTV",d:"Lifetime Value — total revenue expected from a customer across their entire relationship.",c:"Marketing"},
+  {t:"Conversion Rate",d:"Percentage of visitors or leads who take a desired action (purchase, sign-up).",c:"Marketing"},
+  {t:"USP",d:"Unique Selling Proposition — the distinct benefit that sets your product apart from competitors.",c:"Marketing"},
+  {t:"Funnel",d:"The customer journey from awareness to purchase, narrowing as people drop off at each stage.",c:"Marketing"},
+  {t:"B2B",d:"Business-to-Business — selling products or services to other companies, not consumers.",c:"Marketing"},
+  {t:"B2C",d:"Business-to-Consumer — selling products or services directly to individual end consumers.",c:"Marketing"},
+  {t:"Content Marketing",d:"Creating valuable content to attract, engage, and retain a defined target audience.",c:"Marketing"},
+  {t:"SEO",d:"Search Engine Optimization — improving a website's ranking in organic (unpaid) search results.",c:"Marketing"},
+  {t:"Churn Rate",d:"Percentage of customers who stop using a product or service in a given period.",c:"Marketing"},
+  {t:"SWOT Analysis",d:"Framework identifying internal Strengths & Weaknesses and external Opportunities & Threats.",c:"Strategy"},
+  {t:"Competitive Advantage",d:"Unique capabilities that let a company outperform rivals and generate superior value.",c:"Strategy"},
+  {t:"Value Proposition",d:"A clear statement of the concrete results a customer gets from your product — 'why choose us'.",c:"Strategy"},
+  {t:"Core Competency",d:"A defining capability central to competitive strategy that is difficult for rivals to copy.",c:"Strategy"},
+  {t:"Market Penetration",d:"Growth strategy focused on increasing sales of existing products in existing markets.",c:"Strategy"},
+  {t:"Diversification",d:"Growth strategy entering new markets or launching new products to spread risk.",c:"Strategy"},
+  {t:"Blue Ocean Strategy",d:"Creating an uncontested new market, making competition irrelevant.",c:"Strategy"},
+  {t:"KPI",d:"Key Performance Indicator — a measurable value showing how effectively objectives are achieved.",c:"Strategy"},
+  {t:"Pivot",d:"A fundamental change in business strategy after the prior direction proves insufficient.",c:"Strategy"},
+  {t:"Scalability",d:"A model's ability to handle growing demand without proportionally increasing costs.",c:"Strategy"},
+  {t:"Moat",d:"A sustainable competitive advantage that protects a business from rivals. Coined by Warren Buffett.",c:"Strategy"},
+  {t:"Supply Chain",d:"The full network of entities involved in sourcing, producing, and delivering a product.",c:"Operations"},
+  {t:"Lean Management",d:"Methodology eliminating waste and maximising value, inspired by Toyota's production system.",c:"Operations"},
+  {t:"Outsourcing",d:"Contracting specific functions to third-party vendors rather than handling them in-house.",c:"Operations"},
+  {t:"SLA",d:"Service Level Agreement — defines expected service levels, metrics, and responsibilities.",c:"Operations"},
+  {t:"Just-in-Time (JIT)",d:"Inventory strategy where materials arrive only when needed, minimising storage costs.",c:"Operations"},
+  {t:"Overhead",d:"Ongoing expenses not tied to producing a product — rent, utilities, admin salaries.",c:"Operations"},
+  {t:"Benchmark",d:"A reference standard used to measure and compare business performance.",c:"Operations"},
+  {t:"NPS",d:"Net Promoter Score — measures customer loyalty on a 0–10 recommendation scale.",c:"Operations"},
+  {t:"Capacity Planning",d:"Determining production capacity needed to meet changing demand.",c:"Operations"},
+  {t:"OKR",d:"Objectives and Key Results — goal-setting framework defining what to achieve and how to measure it.",c:"HR & Mgmt"},
+  {t:"Employee Retention",d:"Keeping employees long-term — reduces turnover costs and preserves institutional knowledge.",c:"HR & Mgmt"},
+  {t:"Onboarding",d:"Integrating a new employee: orientation, training, tools, and cultural acclimation.",c:"HR & Mgmt"},
+  {t:"Stakeholder",d:"Any individual, group, or entity with an interest in or affected by a business's decisions.",c:"HR & Mgmt"},
+  {t:"Delegation",d:"Assigning tasks, responsibilities, or authority to another person to act on behalf of a manager.",c:"HR & Mgmt"},
+  {t:"Org Culture",d:"Shared values, beliefs, and behaviours that shape how employees work together.",c:"HR & Mgmt"},
+  {t:"Performance Review",d:"Formal evaluation of an employee's work against goals — informs pay, promotion, development.",c:"HR & Mgmt"},
+  {t:"Span of Control",d:"The number of direct reports a manager oversees. Wider spans flatten hierarchy.",c:"HR & Mgmt"},
+  {t:"IPO",d:"Initial Public Offering — first time a private company sells shares to the public.",c:"Startup"},
+  {t:"Venture Capital",d:"Financing provided to high-growth startups in exchange for equity.",c:"Startup"},
+  {t:"Angel Investor",d:"A high-net-worth individual who invests early-stage capital in startups for equity.",c:"Startup"},
+  {t:"Bootstrapping",d:"Building a company using only personal savings or operating revenue, no outside funding.",c:"Startup"},
+  {t:"Valuation",d:"The process of determining the current or projected worth of a company.",c:"Startup"},
+  {t:"Runway",d:"How long a startup can keep operating before running out of cash at current burn rate.",c:"Startup"},
+  {t:"Series A/B/C",d:"Sequential funding rounds following seed stage — each larger as the company scales.",c:"Startup"},
+  {t:"MVP",d:"Minimum Viable Product — the simplest version to test core hypotheses with real users.",c:"Startup"},
+  {t:"Burn Rate",d:"The rate at which a startup spends cash before becoming profitable — usually monthly.",c:"Startup"},
+  {t:"Accounts Receivable",d:"Money owed to a company by customers for goods or services not yet paid.",c:"Accounting"},
+  {t:"Accounts Payable",d:"Money a company owes suppliers for goods and services already received.",c:"Accounting"},
+  {t:"Depreciation",d:"Gradual reduction in the book value of a tangible asset over its useful life.",c:"Accounting"},
+  {t:"Amortization",d:"Like depreciation but for intangible assets — patents, trademarks, goodwill.",c:"Accounting"},
+  {t:"Accrual Accounting",d:"Recording revenues/expenses when earned or incurred, not when cash is exchanged.",c:"Accounting"},
+  {t:"Break-Even Point",d:"The point at which total revenues equal total costs — no profit, no loss.",c:"Accounting"},
+  {t:"COGS",d:"Cost of Goods Sold — direct costs to produce the goods a company sells.",c:"Accounting"},
+  {t:"Due Diligence",d:"A thorough investigation of a potential investment or acquisition before committing.",c:"Business Law"},
+  {t:"LLC",d:"Limited Liability Company — combines pass-through taxation with limited personal liability.",c:"Business Law"},
+  {t:"NDA",d:"Non-Disclosure Agreement — contract preventing sharing of confidential information.",c:"Business Law"},
+  {t:"Intellectual Property",d:"Legal rights protecting inventions, designs, and creative works via patents, copyrights, trademarks.",c:"Business Law"},
+  {t:"Compliance",d:"Adherence to laws, regulations, and internal policies governing a business.",c:"Business Law"},
+  {t:"Fiduciary Duty",d:"Legal obligation to act in another party's best interest — e.g., board members to shareholders.",c:"Business Law"},
+    {t:"Product-Market Fit",d:"When a product satisfies strong market demand — customers actively buy, use, and recommend it.",c:"Startup"},
+  {t:"Total Addressable Market (TAM)",d:"The total market demand for a product if it achieved 100% market share.",c:"Startup"},
+  {t:"Serviceable Addressable Market (SAM)",d:"The portion of TAM your product can realistically target.",c:"Startup"},
+  {t:"Serviceable Obtainable Market (SOM)",d:"The realistic market share a company can capture in the near term.",c:"Startup"},
+  {t:"Seed Funding",d:"The earliest funding round used to validate the business idea and build the first product.",c:"Startup"},
+  {t:"Term Sheet",d:"A non-binding document outlining the basic terms and conditions of an investment.",c:"Startup"},
+  {t:"Cap Table",d:"Capitalization Table — a record showing ownership stakes, equity dilution, and investors.",c:"Startup"},
+  {t:"Equity Dilution",d:"Reduction in ownership percentage as new investors receive shares.",c:"Startup"},
+  {t:"Exit Strategy",d:"A plan for founders and investors to sell their stake — IPO, acquisition, or merger.",c:"Startup"},
+  {t:"Unicorn",d:"A privately held startup valued at over $1 billion.",c:"Startup"},
+  {t:"Decacorn",d:"A startup valued at over $10 billion.",c:"Startup"},
+  {t:"Growth Hacking",d:"Rapid experimentation across marketing channels to find scalable growth opportunities.",c:"Marketing"},
+  {t:"Virality",d:"When users organically spread a product, causing exponential growth.",c:"Marketing"},
+  {t:"Retention Rate",d:"Percentage of customers who continue using a product over time.",c:"Marketing"},
+  {t:"North Star Metric",d:"The single most important metric that captures the core value delivered to customers.",c:"Strategy"},
+  {t:"Unit Economics",d:"The direct revenues and costs associated with a single unit of a product or customer.",c:"Finance"},
+  {t:"Gross Merchandise Value (GMV)",d:"Total value of goods sold through a marketplace before fees.",c:"Finance"},
+  {t:"Freemium Model",d:"Business model offering a free basic product while charging for premium features.",c:"Strategy"},
+  {t:"Network Effects",d:"When a product becomes more valuable as more people use it.",c:"Strategy"},
+  {t:"Customer Persona",d:"A fictional profile representing a typical target customer.",c:"Marketing"},
+  {t:"Go-To-Market Strategy",d:"A plan describing how a company will reach customers and achieve competitive advantage.",c:"Strategy"},
+  {t:"Early Adopters",d:"The first group of customers willing to try new products before the mainstream market.",c:"Marketing"},
+  {t:"Landing Page",d:"A single web page designed to capture leads or encourage a specific action.",c:"Marketing"},
+  {t:"A/B Testing",d:"Experiment comparing two versions of a product or marketing asset to determine which performs better.",c:"Marketing"},
+  {t:"User Acquisition",d:"Strategies and channels used to gain new users.",c:"Marketing"},
+  {t:"ARR",d:"Annual Recurring Revenue — yearly predictable revenue from subscriptions.",c:"Finance"},
+  {t:"MRR",d:"Monthly Recurring Revenue — predictable monthly revenue from subscriptions.",c:"Finance"},
+  {t:"Burn Multiple",d:"Ratio comparing how much cash a startup burns relative to revenue growth.",c:"Finance"},
+  {t:"Founder Vesting",d:"Schedule that determines when founders earn their equity over time.",c:"Startup"},
+  {t:"Cliff",d:"Minimum time period before equity begins vesting, usually one year.",c:"Startup"},
+  {t:"SAFE",d:"Simple Agreement for Future Equity — investment contract converting to equity in a future funding round.",c:"Startup"},
+  {t:"Convertible Note",d:"Short-term debt that converts into equity during a future funding round.",c:"Startup"},
+  {t:"Customer Success",d:"Team focused on ensuring customers achieve value and continue using the product.",c:"Operations"},
+  {t:"Product Roadmap",d:"A strategic plan outlining how a product will evolve over time.",c:"Operations"},
+  {t:"Technical Debt",d:"Future cost caused by choosing quick solutions instead of better long-term architecture.",c:"Operations"},
+  {t:"Agile Development",d:"Iterative product development method focusing on quick releases and feedback.",c:"Operations"},
+  {t:"Blitzscaling",d:"A strategy prioritizing rapid growth over efficiency to capture market share before competitors.",c:"Strategy"},
+{t:"PMF Score",d:"Metric estimating product-market fit often based on % of users who would be very disappointed if the product disappeared.",c:"Strategy"},
+{t:"Activation Rate",d:"Percentage of users who complete a key action that indicates they experienced initial value.",c:"Marketing"},
+{t:"DAU",d:"Daily Active Users — number of unique users who interact with a product each day.",c:"Marketing"},
+{t:"MAU",d:"Monthly Active Users — number of unique users who interact with a product each month.",c:"Marketing"},
+{t:"DAU/MAU Ratio",d:"Engagement metric measuring stickiness by comparing daily to monthly active users.",c:"Marketing"},
+{t:"Stickiness",d:"How frequently users return to a product — often measured with DAU/MAU.",c:"Marketing"},
+{t:"Growth Rate",d:"Percentage increase in users, revenue, or other metrics over a defined period.",c:"Finance"},
+{t:"Revenue Run Rate",d:"Projected annual revenue based on current monthly or quarterly revenue.",c:"Finance"},
+{t:"Customer Cohort",d:"A group of users segmented by shared characteristics such as signup date.",c:"Marketing"},
+{t:"Cohort Analysis",d:"Evaluating user behavior over time by grouping customers into cohorts.",c:"Marketing"},
+{t:"Payback Period",d:"Time required to recover customer acquisition cost from the revenue generated by that customer.",c:"Finance"},
+{t:"Rule of 40",d:"SaaS metric where revenue growth rate plus profit margin should exceed 40%.",c:"Finance"},
+{t:"SaaS",d:"Software as a Service — software delivered through the cloud via subscription.",c:"Startup"},
+{t:"PLG",d:"Product-Led Growth — growth driven primarily by the product experience rather than sales.",c:"Strategy"},
+{t:"Sales-Led Growth",d:"Growth driven by dedicated sales teams converting leads into paying customers.",c:"Strategy"},
+{t:"Hybrid Growth",d:"Combining product-led and sales-led strategies to acquire and expand customers.",c:"Strategy"},
+{t:"Expansion Revenue",d:"Additional revenue from existing customers through upgrades or add-ons.",c:"Finance"},
+{t:"Upselling",d:"Encouraging customers to purchase a higher-tier product or premium version.",c:"Marketing"},
+{t:"Cross-Selling",d:"Selling additional related products to existing customers.",c:"Marketing"},
+{t:"Chasm",d:"The gap between early adopters and mainstream customers described in technology adoption theory.",c:"Strategy"},
+{t:"Design Thinking",d:"Human-centered problem-solving approach focusing on empathy, ideation, and prototyping.",c:"Strategy"},
+{t:"User Journey",d:"The sequence of steps a user takes when interacting with a product.",c:"Marketing"},
+{t:"Customer Touchpoint",d:"Any interaction between a customer and a company throughout the buying journey.",c:"Marketing"},
+{t:"Lead",d:"A potential customer who has expressed interest in a product or service.",c:"Marketing"},
+{t:"Lead Qualification",d:"Process of determining whether a lead is likely to become a paying customer.",c:"Marketing"},
+{t:"Sales Pipeline",d:"Visual representation of prospects moving through stages of the sales process.",c:"Marketing"},
+{t:"Cold Outreach",d:"Contacting potential customers without prior relationship to generate interest.",c:"Marketing"},
+{t:"Warm Lead",d:"A prospect who has shown interest and is more likely to convert.",c:"Marketing"},
+{t:"Product Discovery",d:"Process of validating product ideas before building them.",c:"Operations"},
+{t:"Prototype",d:"Early model of a product used to test concepts and usability.",c:"Operations"},
+{t:"Iteration",d:"Repeated improvement of a product based on testing and feedback.",c:"Operations"},
+{t:"Sprint",d:"Short development cycle in Agile methodology focused on delivering specific features.",c:"Operations"},
+{t:"Feature Creep",d:"Uncontrolled addition of features that complicate a product.",c:"Operations"},
+{t:"Platform",d:"A system enabling interactions between different user groups, such as buyers and sellers.",c:"Strategy"},
+{t:"Marketplace",d:"Business model connecting multiple buyers and sellers through a digital platform.",c:"Strategy"},
+{t:"Two-Sided Market",d:"Market where a platform serves two distinct but interdependent user groups.",c:"Strategy"},
+{t:"Liquidity (Marketplace)",d:"Balance between supply and demand ensuring transactions occur efficiently.",c:"Strategy"},
+{t:"Growth Loop",d:"Self-reinforcing system where output of one process feeds back as input for growth.",c:"Strategy"},
+{t:"Flywheel",d:"Business model where each activity strengthens others, creating compounding momentum.",c:"Strategy"},
+{t:"Defensibility",d:"Ability of a business to maintain advantage against competitors over time.",c:"Strategy"},
+{t:"Switching Cost",d:"Cost or inconvenience customers face when changing to a competitor.",c:"Strategy"},
+{t:"Data Moat",d:"Competitive advantage created through proprietary data accumulation.",c:"Strategy"},
+{t:"Platform Lock-In",d:"When users stay with a platform because switching would cause significant loss.",c:"Strategy"},
+{t:"Secondary Market",d:"Market where investors buy and sell existing shares of private companies.",c:"Finance"},
+{t:"Down Round",d:"Funding round where valuation is lower than the previous round.",c:"Startup"},
+{t:"Up Round",d:"Funding round where valuation is higher than the previous round.",c:"Startup"},
+{t:"Bridge Round",d:"Short-term financing used until the next major funding round.",c:"Startup"},
+{t:"Strategic Investor",d:"Investor who provides not only capital but also industry expertise and connections.",c:"Startup"},
+{t:"Incubator",d:"Program supporting early startups with mentorship, resources, and workspace.",c:"Startup"},
+{t:"Accelerator",d:"Program offering mentorship, funding, and rapid growth guidance over a short time period.",c:"Startup"},
+{t:"Founder-Market Fit",d:"When a founder's experience, skills, or background uniquely match the problem they are solving.",c:"Startup"},
+{t:"Idea Maze",d:"A founder's deep understanding of all possible approaches, competitors, and historical attempts around a problem.",c:"Strategy"},
+{t:"Zero to One",d:"Creating something fundamentally new rather than improving existing solutions.",c:"Strategy"},
+{t:"Distribution",d:"How a product reaches customers — often more important than the product itself.",c:"Strategy"},
+{t:"Growth Engine",d:"The primary mechanism driving sustainable user or revenue growth.",c:"Strategy"},
+{t:"Viral Coefficient",d:"Average number of new users generated by each existing user.",c:"Marketing"},
+{t:"Referral Program",d:"Growth strategy encouraging users to invite others through incentives.",c:"Marketing"},
+{t:"Organic Growth",d:"Growth generated without paid marketing, usually through product value or word-of-mouth.",c:"Marketing"},
+{t:"Paid Acquisition",d:"User acquisition using advertising channels such as Google Ads or social media ads.",c:"Marketing"},
+{t:"Customer Journey Map",d:"Visual representation of all customer interactions with a product.",c:"Marketing"},
+{t:"Retention Curve",d:"Graph showing the percentage of users who remain active over time.",c:"Marketing"},
+{t:"Engagement Rate",d:"Metric measuring how actively users interact with a product or content.",c:"Marketing"},
+{t:"Unit Contribution Margin",d:"Revenue per unit minus variable costs required to serve that unit.",c:"Finance"},
+{t:"Gross Burn",d:"Total cash spent by a startup each month.",c:"Finance"},
+{t:"Net Burn",d:"Cash lost per month after subtracting revenue from expenses.",c:"Finance"},
+{t:"Cash Conversion Cycle",d:"Time required for a company to convert investments in inventory into cash from sales.",c:"Finance"},
+{t:"Revenue Multiple",d:"Valuation metric comparing company value to annual revenue.",c:"Finance"},
+{t:"Market Multiple",d:"Valuation benchmark derived from comparable companies in the same industry.",c:"Finance"},
+{t:"Option Pool",d:"Reserved shares set aside for future employees as stock compensation.",c:"Startup"},
+{t:"Employee Stock Options (ESOP)",d:"Equity granted to employees giving them the right to buy shares later.",c:"Startup"},
+{t:"Liquidation Preference",d:"Investor right to receive their investment back before other shareholders during an exit.",c:"Startup"},
+{t:"Anti-Dilution Protection",d:"Protection ensuring investors maintain ownership percentage in future funding rounds.",c:"Startup"},
+{t:"Board of Directors",d:"Group responsible for overseeing company strategy and protecting shareholder interests.",c:"Startup"},
+{t:"Independent Director",d:"Board member without financial ties to the company or investors.",c:"Startup"},
+{t:"Product-Led Onboarding",d:"User onboarding where the product itself teaches the user how to gain value.",c:"Operations"},
+{t:"Feature Adoption",d:"Percentage of users actively using a particular product feature.",c:"Operations"},
+{t:"Product Analytics",d:"Data analysis used to understand how users interact with a product.",c:"Operations"},
+{t:"Experimentation Culture",d:"Organizational mindset focused on testing hypotheses through experiments.",c:"Operations"},
+{t:"Continuous Deployment",d:"Software development practice releasing updates frequently and automatically.",c:"Operations"},
+{t:"API Economy",d:"Business ecosystem where companies expose services via APIs for integration and monetization.",c:"Strategy"},
+{t:"Developer Ecosystem",d:"Community of developers building applications on top of a platform.",c:"Strategy"},
+{t:"Platform Strategy",d:"Strategy enabling external participants to build value on top of a company's product.",c:"Strategy"},
+{t:"Data Network Effects",d:"When more users generate more data, improving product performance and attracting even more users.",c:"Strategy"},
+{t:"AI Moat",d:"Competitive advantage created by proprietary datasets and trained models.",c:"Strategy"},
+{t:"Model Fine-Tuning",d:"Training a pretrained AI model on specialized data to improve performance for a task.",c:"Operations"},
+{t:"Inference Cost",d:"Cost of running an AI model to generate predictions or responses.",c:"Operations"},
+{t:"Latency",d:"Delay between a user's request and the system's response.",c:"Operations"},
+{t:"Edge Computing",d:"Processing data closer to where it is generated rather than in centralized cloud servers.",c:"Operations"},
+{t:"Regulatory Moat",d:"Competitive advantage created through regulatory approvals or compliance barriers.",c:"Strategy"},
+{t:"Super App",d:"Application offering many services in a single ecosystem such as payments, messaging, and commerce.",c:"Strategy"}
+];
+
+// ════════════════════════════════════════
+//  STORAGE ENGINE
+//  Primary:  localStorage
+//  Fallback: cookies (1-year expiry)
+//  Entire state = one JSON blob
+// ════════════════════════════════════════
+const SK='ubuzz_v2'; // storage key
+
+function _lsSet(v){try{localStorage.setItem(SK,v);}catch(e){}}
+function _lsGet(){try{return localStorage.getItem(SK);}catch(e){return null;}}
+function _lsDel(){try{localStorage.removeItem(SK);}catch(e){}}
+
+function _ckSet(val,days){
+  try{
+    const e=new Date(Date.now()+days*864e5).toUTCString();
+    document.cookie=`${SK}=${encodeURIComponent(val)};expires=${e};path=/;SameSite=Lax`;
+  }catch(e){}
+}
+function _ckGet(){
+  try{
+    const m=document.cookie.match(new RegExp('(?:^|;\\s*)'+SK+'=([^;]*)'));
+    return m?decodeURIComponent(m[1]):null;
+  }catch(e){return null;}
+}
+function _ckDel(){
+  document.cookie=`${SK}=;expires=Thu,01 Jan 1970 00:00:00 GMT;path=/`;
+}
+
+function saveState(s){
+  const json=JSON.stringify(s);
+  _lsSet(json);
+  // cookies: store full state if <3.8KB, else compact subset
+  if(json.length<3800){
+    _ckSet(json,365);
+  } else {
+    _ckSet(JSON.stringify({mastered:s.mastered,streak:s.streak,lastVisit:s.lastVisit,totalQuizzes:s.totalQuizzes}),365);
+  }
+}
+function loadState(){
+  let raw=_lsGet()||_ckGet();
+  if(!raw) return defState();
+  try{return Object.assign(defState(),JSON.parse(raw));}
+  catch(e){return defState();}
+}
+function defState(){
+  return {mastered:[],streak:0,lastVisit:'',totalQuizzes:0,quizHistory:[],fcCat:'All',fcIdx:0,glossCat:'All',quizCat:'All'};
+}
+function clearAll(){_lsDel();_ckDel();}
+
+function storageBytes(){
+  const ls=_lsGet()||''; const ck=_ckGet()||'';
+  return {ls:new Blob([ls]).size, ck:new Blob([ck]).size};
+}
+
+// ════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════
+let S=loadState();
+let mastered=new Set(S.mastered||[]);
+
+// Streak
+(()=>{
+  const today=new Date().toDateString();
+  if(S.lastVisit!==today){
+    const yest=new Date(Date.now()-86400000).toDateString();
+    S.streak=(S.lastVisit===yest)?S.streak+1:1;
+    S.lastVisit=today; persist();
+  }
+  document.getElementById('snum').textContent=S.streak;
+})();
+
+function persist(){S.mastered=[...mastered];saveState(S);}
+
+// ════════════════════════════════════════
+//  NAV
+// ════════════════════════════════════════
+function nav(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nl').forEach(l=>l.classList.toggle('active',l.dataset.page===page));
+  document.getElementById('page-'+page).classList.add('active');
+  if(page==='dashboard') renderDash();
+  if(page==='flashcard') renderFC();
+  if(page==='quiz')      renderQStart();
+  if(page==='glossary')  renderGloss();
+  if(page==='progress')  renderProg();
+}
+document.querySelectorAll('.nl').forEach(l=>l.addEventListener('click',()=>nav(l.dataset.page)));
+
+// ════════════════════════════════════════
+//  DASHBOARD
+// ════════════════════════════════════════
+function renderDash(){
+  const m=mastered.size, total=TERMS.length;
+  document.getElementById('d-mastered').textContent=m;
+  document.getElementById('d-pct').textContent=Math.round(m/total*100)+'%';
+  document.getElementById('d-total').textContent=total;
+  document.getElementById('d-quizzes').textContent=S.totalQuizzes||0;
+  document.getElementById('d-catsub').textContent=Object.keys(CATS).length+' categories';
+  // cat grid
+  document.getElementById('catgrid').innerHTML=Object.entries(CATS).map(([cat,ci])=>{
+    const ts=TERMS.filter(t=>t.c===cat);
+    const done=ts.filter(t=>mastered.has(t.t)).length;
+    const pct=ts.length?Math.round(done/ts.length*100):0;
+    return `<div class="catcard" style="--cc:${ci.color}" onclick="fcSetCat('${cat}');nav('flashcard')">
+      <span class="cicon">${ci.icon}</span>
+      <div class="cname">${cat}</div>
+      <div class="cmeta">${ts.length} terms · ${done} mastered</div>
+      <div class="cbarw"><div class="cbar" style="width:${pct}%;background:${ci.color}"></div></div>
+    </div>`;
+  }).join('');
+  // history
+  const hist=(S.quizHistory||[]).slice().reverse().slice(0,5);
+  const hs=document.getElementById('histsec');
+  if(!hist.length){hs.style.display='none';return;}
+  hs.style.display='';
+  document.getElementById('histsub').textContent=`Last ${hist.length} session${hist.length!==1?'s':''}`;
+  document.getElementById('histlist').innerHTML=hist.map(h=>{
+    const pct=Math.round(h.score/h.total*100);
+    const col=pct>=80?'var(--green)':pct>=60?'var(--accent)':'var(--red)';
+    const pips=(h.correct||[]).map(ok=>`<span class="hpip" style="background:${ok?'var(--green)':'var(--red)'}"></span>`).join('');
+    return `<div class="hrow">
+      <span class="hscore" style="color:${col}">${pct}%</span>
+      <div class="hmeta"><div>${h.score}/${h.total} correct · ${h.cat==='All'?'All categories':h.cat}</div><div class="hdate">${h.date}</div></div>
+      <div class="hpips">${pips}</div>
+    </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════
+//  FLASHCARDS
+// ════════════════════════════════════════
+let fcCat=S.fcCat||'All', fcList=[], fcIdx=S.fcIdx||0, fcFlip=false;
+
+function getFcList(){return fcCat==='All'?[...TERMS]:TERMS.filter(t=>t.c===fcCat);}
+function fcSetCat(cat){fcCat=cat;fcIdx=0;fcFlip=false;S.fcCat=cat;S.fcIdx=0;persist();renderFC();}
+
+function renderFCSB(){
+  document.getElementById('fcsb').innerHTML=
+    `<div class="scitem ${fcCat==='All'?'active':''}" onclick="fcSetCat('All')">
+      <span>All Terms</span><span class="scct">${TERMS.length}</span></div>`
+    +Object.entries(CATS).map(([cat,ci])=>{
+      const ct=TERMS.filter(t=>t.c===cat).length;
+      const done=TERMS.filter(t=>t.c===cat&&mastered.has(t.t)).length;
+      return `<div class="scitem ${fcCat===cat?'active':''}" onclick="fcSetCat('${cat}')">
+        <span style="display:flex;align-items:center;gap:7px;">
+          <span class="scdot" style="background:${ci.color}"></span>${cat}</span>
+        <span class="scct">${done}/${ct}</span></div>`;
+    }).join('');
+}
+
+function renderFC(){
+  fcList=getFcList();
+  if(fcIdx>=fcList.length) fcIdx=0;
+  renderFCSB();
+  const term=fcList[fcIdx];
+  const ci=CATS[term.c]||{color:'#e8c04a',bg:'rgba(232,192,74,0.12)'};
+  document.getElementById('fcpb').style.width=((fcIdx+1)/fcList.length*100).toFixed(1)+'%';
+  ['cbadge','cbadge2'].forEach(id=>{
+    const el=document.getElementById(id);
+    el.textContent=term.c; el.style.background=ci.bg; el.style.color=ci.color;
+  });
+  document.getElementById('cterm').textContent=term.t;
+  document.getElementById('cdef').textContent=term.d;
+  document.getElementById('c3d').classList.toggle('flipped',fcFlip);
+  document.getElementById('fcprev').disabled=fcIdx===0;
+  document.getElementById('fcnext').disabled=fcIdx===fcList.length-1;
+  const mb=document.getElementById('ccm');
+  const isMastered=mastered.has(term.t);
+  mb.textContent=isMastered?'✓ Mastered':'Mark mastered';
+  mb.classList.toggle('on',isMastered);
+  document.getElementById('ccind').textContent=`${fcIdx+1} / ${fcList.length}`;
+}
+function flipCard(){fcFlip=!fcFlip;document.getElementById('c3d').classList.toggle('flipped',fcFlip);}
+function fcNext(){if(fcIdx<fcList.length-1){fcIdx++;fcFlip=false;S.fcIdx=fcIdx;persist();renderFC();}}
+function fcPrev(){if(fcIdx>0){fcIdx--;fcFlip=false;S.fcIdx=fcIdx;persist();renderFC();}}
+function fcShuffle(){fcList=fcList.sort(()=>Math.random()-.5);fcIdx=0;fcFlip=false;renderFC();toast('Cards shuffled!');}
+function toggleMastered(){
+  const t=fcList[fcIdx];
+  if(mastered.has(t.t)){mastered.delete(t.t);toast('Removed from mastered');}
+  else{mastered.add(t.t);toast('✓ Marked as mastered');}
+  persist(); renderFC(); renderFCSB();
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('page-flashcard').classList.contains('active')) return;
+  if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return;
+  if(e.key==='ArrowRight'){e.preventDefault();fcNext();}
+  if(e.key==='ArrowLeft'){e.preventDefault();fcPrev();}
+  if(e.key===' '){e.preventDefault();flipCard();}
+  if(e.key==='m'||e.key==='M') toggleMastered();
+});
+
+// ════════════════════════════════════════
+//  QUIZ
+// ════════════════════════════════════════
+let qCat='All', qList=[], qIdx=0, qScore=0, qAns=false, qLog=[];
+function shuf(a){return [...a].sort(()=>Math.random()-.5);}
+
+function renderQStart(){
+  document.getElementById('qcatpicker').innerHTML=
+    `<button class="qcbtn ${qCat==='All'?'active':''}" onclick="setQCat('All')">All</button>`
+    +Object.keys(CATS).map(cat=>
+      `<button class="qcbtn ${qCat===cat?'active':''}" onclick="setQCat('${cat}')">${cat}</button>`
+    ).join('');
+  document.getElementById('qstart').style.display='';
+  document.getElementById('qactive').style.display='none';
+  document.getElementById('qresult').style.display='none';
+}
+function setQCat(cat){
+  qCat=cat; S.quizCat=cat; persist();
+  document.querySelectorAll('.qcbtn').forEach(b=>b.classList.toggle('active',b.textContent===cat));
+}
+function startQuiz(){
+  const pool=qCat==='All'?TERMS:TERMS.filter(t=>t.c===qCat);
+  if(pool.length<4){toast('Need ≥4 terms in this category');return;}
+  qList=shuf(pool).slice(0,Math.min(10,pool.length));
+  qIdx=0; qScore=0; qAns=false; qLog=[];
+  document.getElementById('qstart').style.display='none';
+  document.getElementById('qactive').style.display='';
+  renderQ();
+}
+function renderQ(){
+  const q=qList[qIdx]; const ci=CATS[q.c]||{color:'#e8c04a'};
+  document.getElementById('qpips').innerHTML=qList.map((_,i)=>{
+    let c='qpip';
+    if(i<qIdx) c+=' '+(qLog[i]?'c':'w');
+    if(i===qIdx) c+=' cur';
+    return `<div class="${c}"></div>`;
+  }).join('');
+  document.getElementById('qsclive').textContent='Score: '+qScore;
+  document.getElementById('qctag').innerHTML=`<span style="color:${ci.color}">${q.c}</span> &nbsp;·&nbsp; Q${qIdx+1}/${qList.length}`;
+  document.getElementById('qtext').textContent=`What does "${q.t}" mean?`;
+  const opts=shuf([q,...shuf(TERMS.filter(t=>t.t!==q.t)).slice(0,3)]);
+  document.getElementById('qopts').innerHTML=opts.map(o=>
+    `<button class="qopt" data-correct="${o.t===q.t}" onclick="pickOpt(this,'${q.t.replace(/'/g,"&#39;").replace(/"/g,"&quot;")}')">${o.d}</button>`
+  ).join('');
+  document.getElementById('qfb').className='qfb';
+  document.getElementById('qnext').className='qnext';
+  qAns=false;
+}
+function pickOpt(btn,ct){
+  if(qAns) return; qAns=true;
+  const ok=btn.dataset.correct==='true';
+  document.querySelectorAll('.qopt').forEach(b=>{b.disabled=true;if(b.dataset.correct==='true') b.classList.add('correct');});
+  if(ok){btn.classList.add('correct');qScore++;}else btn.classList.add('wrong');
+  qLog.push(ok);
+  const fb=document.getElementById('qfb');
+  fb.textContent=ok?'✓ Correct!':`✗ Answer: "${ct}"`;
+  fb.className='qfb show '+(ok?'ok':'bad');
+  document.getElementById('qsclive').textContent='Score: '+qScore;
+  const nn=document.getElementById('qnext');
+  nn.className='qnext show';
+  nn.textContent=(qIdx+1<qList.length)?'Next →':'See results →';
+}
+function quizNext(){qIdx++;if(qIdx>=qList.length) finishQuiz(); else renderQ();}
+function finishQuiz(){
+  const pct=Math.round(qScore/qList.length*100);
+  const entry={date:new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}),score:qScore,total:qList.length,cat:qCat,correct:[...qLog]};
+  S.quizHistory=(S.quizHistory||[]);
+  S.quizHistory.push(entry);
+  if(S.quizHistory.length>50) S.quizHistory=S.quizHistory.slice(-50);
+  S.totalQuizzes=(S.totalQuizzes||0)+1;
+  persist();
+  document.getElementById('qactive').style.display='none';
+  const C=2*Math.PI*58; const off=C*(1-pct/100);
+  const col=pct>=80?'var(--green)':pct>=60?'var(--accent)':'var(--red)';
+  let title,sub;
+  if(pct===100){title='Perfect!';sub='Flawless — you own this category.';}
+  else if(pct>=80){title='Great work!';sub='Solid knowledge. Push for 100% next round.';}
+  else if(pct>=60){title='Good effort!';sub="You're getting there. Review the missed ones.";}
+  else{title='Keep going!';sub='Flashcard those weak spots, then retake the quiz.';}
+  document.getElementById('qresult').style.display='';
+  document.getElementById('qresult').innerHTML=`
+    <div class="rscreen">
+      <div class="rring">
+        <svg width="148" height="148" viewBox="0 0 148 148">
+          <circle cx="74" cy="74" r="58" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="10"/>
+          <circle cx="74" cy="74" r="58" fill="none" stroke="${col}" stroke-width="10" stroke-linecap="round"
+            stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${C.toFixed(1)}" id="rarc"/>
+        </svg>
+        <div class="rlabel">
+          <div class="rpct" style="color:${col}">${pct}%</div>
+          <div class="rfrac">${qScore}/${qList.length}</div>
+        </div>
+      </div>
+      <div class="rtitle">${title}</div>
+      <div class="rsub">${sub}</div>
+      <div class="rbtns">
+        <button class="bp" onclick="startQuiz()">Try again</button>
+        <button class="bs" onclick="nav('flashcard')">Flashcards</button>
+        <button class="bs" onclick="nav('progress')">History</button>
+      </div>
+    </div>`;
+  setTimeout(()=>{const a=document.getElementById('rarc');if(a){a.style.transition='stroke-dashoffset 1.1s ease';a.style.strokeDashoffset=off.toFixed(1);}},120);
+}
+
+// ════════════════════════════════════════
+//  GLOSSARY
+// ════════════════════════════════════════
+let gCat=S.glossCat||'All';
+function setGCat(c){gCat=c;S.glossCat=c;persist();renderGloss();}
+function renderGloss(){
+  document.getElementById('gfilters').innerHTML=
+    `<button class="gfbtn ${gCat==='All'?'active':''}" onclick="setGCat('All')">All</button>`
+    +Object.keys(CATS).map(cat=>`<button class="gfbtn ${gCat===cat?'active':''}" onclick="setGCat('${cat}')">${cat}</button>`).join('');
+  const q=(document.getElementById('gsearch')?.value||'').toLowerCase();
+  let terms=gCat==='All'?TERMS:TERMS.filter(t=>t.c===gCat);
+  if(q) terms=terms.filter(t=>t.t.toLowerCase().includes(q)||t.d.toLowerCase().includes(q));
+  const tbl=document.getElementById('gtable');
+  if(!terms.length){tbl.innerHTML='<div class="gempty">No terms found.</div>';return;}
+  tbl.innerHTML=terms.map(term=>{
+    const ci=CATS[term.c]||{color:'#e8c04a',bg:'rgba(232,192,74,0.12)'};
+    const esc=term.t.replace(/'/g,'&#39;').replace(/"/g,'&quot;');
+    return `<div class="grow">
+      <div><div class="gterm">${term.t}</div><span class="gchip" style="background:${ci.bg};color:${ci.color}">${term.c}</span></div>
+      <div class="gdef">${term.d}</div>
+      <div class="gdot ${mastered.has(term.t)?'on':''}" title="${mastered.has(term.t)?'Mastered':'Mark mastered'}" onclick="gToggle('${esc}',this)"></div>
+    </div>`;
+  }).join('');
+}
+function gToggle(t,dot){
+  if(mastered.has(t)){mastered.delete(t);dot.classList.remove('on');toast('Removed from mastered');}
+  else{mastered.add(t);dot.classList.add('on');toast('✓ Marked as mastered');}
+  persist();
+}
+
+// ════════════════════════════════════════
+//  PROGRESS PAGE
+// ════════════════════════════════════════
+function renderProg(){
+  // cats
+  document.getElementById('pcats').innerHTML=Object.entries(CATS).map(([cat,ci])=>{
+    const ts=TERMS.filter(t=>t.c===cat);
+    const done=ts.filter(t=>mastered.has(t.t)).length;
+    const pct=ts.length?Math.round(done/ts.length*100):0;
+    return `<div class="pcrow">
+      <span class="pcicon">${ci.icon}</span>
+      <span class="pcname">${cat}</span>
+      <div class="pcbarw"><div class="pcbar" style="width:${pct}%;background:${ci.color}"></div></div>
+      <span class="pcfrac">${done}/${ts.length}</span>
+    </div>`;
+  }).join('');
+  // history
+  const hist=(S.quizHistory||[]).slice().reverse();
+  const ph=document.getElementById('phist');
+  if(!hist.length){ph.innerHTML='<div style="color:var(--muted);font-size:14px;padding:18px 0;">No quizzes taken yet.</div>';}
+  else ph.innerHTML=hist.map(h=>{
+    const pct=Math.round(h.score/h.total*100);
+    const col=pct>=80?'var(--green)':pct>=60?'var(--accent)':'var(--red)';
+    const pips=(h.correct||[]).map(ok=>`<span class="hpip" style="background:${ok?'var(--green)':'var(--red)'}"></span>`).join('');
+    return `<div class="hrow">
+      <span class="hscore" style="color:${col}">${pct}%</span>
+      <div class="hmeta"><div>${h.score}/${h.total} correct — ${h.cat==='All'?'All categories':h.cat}</div><div class="hdate">${h.date}</div></div>
+      <div class="hpips">${pips}</div>
+    </div>`;
+  }).join('');
+  // storage card
+  const {ls,ck}=storageBytes();
+  document.getElementById('storecard').innerHTML=`
+    <div class="strow"><span class="stlbl">Primary storage</span><span class="stval g">localStorage (browser)</span></div>
+    <div class="strow"><span class="stlbl">Fallback storage</span><span class="stval g">Cookie (1-year expiry)</span></div>
+    <div class="strow"><span class="stlbl">localStorage size</span><span class="stval">${ls>0?ls+' bytes':'N/A'}</span></div>
+    <div class="strow"><span class="stlbl">Cookie size</span><span class="stval">${ck>0?ck+' bytes':'—'}</span></div>
+    <div class="strow"><span class="stlbl">Terms mastered</span><span class="stval g">${mastered.size} / ${TERMS.length}</span></div>
+    <div class="strow"><span class="stlbl">Quizzes completed</span><span class="stval">${S.totalQuizzes||0}</span></div>
+    <div class="strow"><span class="stlbl">Current streak</span><span class="stval">🔥 ${S.streak} day${S.streak!==1?'s':''}</span></div>
+    <div class="strow"><span class="stlbl">Login required?</span><span class="stval g">Never — zero accounts</span></div>
+    <div class="strow"><span class="stlbl">Data leaves your device?</span><span class="stval g">Never</span></div>`;
+}
+
+// ════════════════════════════════════════
+//  EXPORT / IMPORT / RESET
+// ════════════════════════════════════════
+function exportProgress(){
+  S.mastered=[...mastered];
+  const blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download=`ubuzz-backup-${new Date().toISOString().slice(0,10)}.json`; a.click();
+  URL.revokeObjectURL(url); toast('Backup downloaded!');
+}
+function importPrompt(){
+  openModal(`<h3>Import backup</h3>
+    <p>Paste the contents of your UBuzz JSON backup below. This overwrites your current progress.</p>
+    <textarea id="imp" placeholder='{"mastered":[...],"streak":5,...}'></textarea>
+    <div class="macts">
+      <button class="actbtn" onclick="closeModal()">Cancel</button>
+      <button class="bp" onclick="doImport()">Import</button>
+    </div>`);
+}
+function doImport(){
+  try{
+    const p=JSON.parse(document.getElementById('imp')?.value||'');
+    S=Object.assign(defState(),p);
+    mastered=new Set(S.mastered||[]);
+    persist(); closeModal(); renderDash();
+    toast('Progress imported!');
+  }catch(e){toast('Invalid JSON — check your file');}
+}
+function confirmReset(){
+  openModal(`<h3>Reset all progress?</h3>
+    <p>This permanently deletes your mastered terms, quiz history, and streak. Cannot be undone.</p>
+    <div class="macts">
+      <button class="actbtn" onclick="closeModal()">Cancel</button>
+      <button class="actbtn dng" onclick="doReset()">Yes, reset everything</button>
+    </div>`);
+}
+function doReset(){
+  clearAll(); S=defState(); mastered=new Set(); persist();
+  document.getElementById('snum').textContent='0';
+  closeModal(); renderDash(); toast('Progress reset.');
+}
+
+// ════════════════════════════════════════
+//  MODAL
+// ════════════════════════════════════════
+function openModal(html){document.getElementById('mbox').innerHTML=html;document.getElementById('mbg').classList.remove('hidden');}
+function closeModal(){document.getElementById('mbg').classList.add('hidden');}
+document.getElementById('mbg').addEventListener('click',e=>{if(e.target===document.getElementById('mbg'))closeModal();});
+
+// ════════════════════════════════════════
+//  TOAST
+// ════════════════════════════════════════
+let _tt;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(_tt); _tt=setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+// ════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════
+fcCat=S.fcCat||'All'; fcIdx=S.fcIdx||0;
+gCat=S.glossCat||'All'; qCat=S.quizCat||'All';
+renderDash(); renderFC(); renderGloss();
+</script>
+</body>
+</html>
