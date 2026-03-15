@@ -45,30 +45,6 @@ npx serve .
 
 ---
 
-## Deploying Free to the Web
-
-### Netlify Drop (30 seconds, no account needed)
-1. Go to **https://app.netlify.com/drop**
-2. Drag the `ubuzz` folder onto the page
-3. Get a live URL instantly (e.g. `https://ubuzz.netlify.app`)
-
-### Vercel
-```bash
-npm i -g vercel
-cd ubuzz
-vercel
-```
-
-### GitHub Pages
-1. Create a GitHub repo → upload `index.html`
-2. Settings → Pages → Source → main branch
-3. Live at `https://yourusername.github.io/repo-name`
-
-### Cloudflare Pages
-Connect a GitHub repo → Cloudflare deploys on every push. Free tier is generous.
-
----
-
 ## Features
 
 | Feature | Detail |
