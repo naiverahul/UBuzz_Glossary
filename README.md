@@ -1,6 +1,6 @@
 # UBuzz — Business Vocabulary, Mastered
 
-A lightweight, single-file web app to master 65+ business terms.
+A lightweight, single-file web app to master 200+ business terms.
 **Zero login. Zero accounts. Progress saves automatically.**
 
 ---
