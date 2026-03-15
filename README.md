@@ -25,25 +25,7 @@ Everything is stored as a single JSON blob on the **user's own device**. No serv
 
 ---
 
-## Running Locally
-
-**Simplest — just open the file:**
-```
-Double-click index.html → opens in browser
-```
-
-**Recommended — local server (better font loading):**
-```bash
-# Python (Mac/Linux built-in)
-cd ubuzz
-python3 -m http.server 3000
-# Open http://localhost:3000
-
-# Node.js
-npx serve .
-```
-
----
+## [Visit Ubuzz](https://ubuzz.netlify.app/)
 
 ## Features
 
@@ -62,12 +44,20 @@ npx serve .
 
 ## Customising Terms
 
-All terms are in the `TERMS` array inside `<script>` in `index.html`.
+All terms are stored in the `TERMS` array inside the `<script>` section of `index.html`.
+
+You can contribute by adding new business or startup terms in two ways:
+
+1. **Edit directly on GitHub** and add the term to the `TERMS` array.
+2. **Email the term suggestion** if you think it would be useful to include.
+
+📧 Email: [Rahul23418@iiitd.ac.in](mailto:Rahul23418@iiitd.ac.in)
+
+### Example
 
 ```js
 // Add your own:
 {t:"Your Term", d:"Your definition.", c:"Finance"},
-```
 
 Available categories:
 `Finance` · `Marketing` · `Strategy` · `Operations` · `HR & Mgmt` · `Startup` · `Accounting` · `Business Law`
